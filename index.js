@@ -38,10 +38,10 @@ socket.on("connection", (socket) => {
   });
 });
 
-// GET ALL MESSAGES
+// GET LAST 30 MESSAGES
 app.get('/api/messages', async (req, res, next) => {
     try {
-        const messages = await Message.find({});
+        const messages = await Message.find().sort({ _id: -1 }).limit(10);
         res.json(messages);
     }
     catch (error) {
