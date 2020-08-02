@@ -20,7 +20,7 @@ const socket = io(http);
 const port = process.env.PORT;
 
 app.use(morgan("common"));
-app.use(helmet());
+//app.use(helmet());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
