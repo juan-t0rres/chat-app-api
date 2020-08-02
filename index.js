@@ -41,8 +41,8 @@ socket.on("connection", (socket) => {
 // GET LAST 30 MESSAGES
 app.get('/api/messages', async (req, res, next) => {
     try {
-        const messages = await Message.find().sort({ _id: 1 }).limit(30);
-        res.json(messages);
+        const messages = await Message.find().sort({ _id: -1 }).limit(30);
+        res.json(messages.reverse());
     }
     catch (error) {
         res.status(400);
