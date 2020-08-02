@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require("express");
 const morgan = require("morgan");
-const helmet = require("helmet");
 const cors = require("cors");
 
 const mongoose = require('mongoose');
@@ -22,7 +21,6 @@ const port = process.env.PORT;
 
 app.use(cors())
 app.use(morgan("common"));
-app.use(helmet());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
