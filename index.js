@@ -50,7 +50,7 @@ app.get('/api/messages', async (req, res, next) => {
     }
 });
 
-// clear all messages
+// DELETE ALL MESSAGES
 app.delete('/api/clear', async (req, res, next) => {
     try {
         const deleted = await Message.deleteMany({});
@@ -62,14 +62,14 @@ app.delete('/api/clear', async (req, res, next) => {
     }
 });
 
-// default route when a route can't be found
+// DEFAULT ROUTE (IF NO ROUTE FOUND)
 app.use((req, res, next) => {
   const error = new Error(`Not Found - ${req.originalUrl}`);
   res.status(404);
   next(error);
 });
 
-// error handling
+// ERROR HANDLING
 app.use((error, req, res, next) => {
   res.json({
     msg: error.message,
@@ -77,7 +77,6 @@ app.use((error, req, res, next) => {
   });
 });
 
-//app.listen(port, () => console.log(`express app listening at http://localhost:${port}`))
 http.listen(port, () => {
   console.log("connected to port: " + port);
 });
