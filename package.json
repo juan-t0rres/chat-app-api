@@ -16,6 +16,6 @@
     "helmet": "^3.23.3",
     "mongoose": "^5.9.27",
     "morgan": "^1.10.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
